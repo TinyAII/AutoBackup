@@ -1,6 +1,6 @@
 # AutoBackup 自动备份插件
 
-**TinyAII 出品** | MIT 开源 | Paper 1.21.8 | 零依赖
+**TinyAII 出品** | MIT 开源 | Paper/Spigot 1.16 ~ 26.x | 零依赖
 
 自动备份你的 Minecraft 服务器，支持定时备份、手动备份、多存储后端（本地已实现，OSS/S3 接口预留），以及停服前自动备份开关。
 
@@ -18,10 +18,11 @@
 | 备份列表 | `/备份 列表` 查看所有备份记录（文件名、大小、时间） |
 | 恢复指引 | `/备份 恢复 <文件名>` 给出恢复步骤（需停服手动操作） |
 | 中文指令 | 所有命令支持中文，Tab 补全友好 |
+| 进度广播 | 备份过程中每 10 秒广播进度 |
 
 ## 安装
 
-1. 下载 `autobackup-1.0.0.jar`
+1. 下载 `autobackup-1.0.1.jar`
 2. 放入服务器的 `plugins/` 目录
 3. 重启服务器或执行 `/reload`
 4. 插件会自动生成 `plugins/AutoBackup/config.yml`，按需修改
@@ -69,8 +70,8 @@ local:
 
 ## 兼容性
 
-- **Paper** 1.21.8
-- **Java** 21+
+- **Paper / Spigot** 1.16 ~ 26.x
+- **Java** 21+（Java 25+ 用于 MC 26.2+）
 - 零依赖，无需其他插件
 
 ## 已知限制
@@ -80,6 +81,11 @@ local:
 - 大世界（>10GB）备份可能需要较长时间，期间服务器可能轻微卡顿
 
 ## 更新日志
+
+### v1.0.1
+- 支持 Paper/Spigot 1.16 ~ 26.x 全系（改用 spigot-api 1.16.5 编译）
+- 修复手动备份不执行的 bug
+- 新增备份进度广播（每 10 秒一次）
 
 ### v1.0.0
 - 初始版本发布
@@ -95,7 +101,7 @@ MIT License · Copyright (c) 2026 TinyAII
 
 # AutoBackup (English)
 
-**by TinyAII** | MIT License | Paper 1.21.8 | Zero dependencies
+**by TinyAII** | MIT License | Paper/Spigot 1.16 ~ 26.x | Zero dependencies
 
 Auto-backup plugin for Minecraft servers. Supports scheduled backups, manual backups, multiple storage backends (local implemented, OSS/S3 interfaces reserved), and pre-shutdown backup toggle.
 
@@ -113,10 +119,11 @@ Auto-backup plugin for Minecraft servers. Supports scheduled backups, manual bac
 | Backup list | `/backup list` shows all backups (name, size, time) |
 | Restore guide | `/backup restore <filename>` gives restore steps (manual, requires stop) |
 | Chinese commands | All commands support Chinese, Tab completion included |
+| Progress broadcast | Reports backup progress every 10 seconds |
 
 ## Installation
 
-1. Download `autobackup-1.0.0.jar`
+1. Download `autobackup-1.0.1.jar`
 2. Put it in your server's `plugins/` folder
 3. Restart server or run `/reload`
 4. Plugin auto-generates `plugins/AutoBackup/config.yml`, edit as needed
@@ -136,8 +143,8 @@ Auto-backup plugin for Minecraft servers. Supports scheduled backups, manual bac
 
 ## Compatibility
 
-- **Paper** 1.21.8
-- **Java** 21+
+- **Paper / Spigot** 1.16 ~ 26.x
+- **Java** 21+ (Java 25+ for MC 26.2+)
 - Zero dependencies
 
 ## Known Limitations
@@ -147,6 +154,11 @@ Auto-backup plugin for Minecraft servers. Supports scheduled backups, manual bac
 - Large worlds (>10GB) may cause brief lag during backup
 
 ## Changelog
+
+### v1.0.1
+- Support Paper/Spigot 1.16 ~ 26.x (compiled with spigot-api 1.16.5)
+- Fix manual backup not executing bug
+- Add backup progress broadcast (every 10 seconds)
 
 ### v1.0.0
 - Initial release
